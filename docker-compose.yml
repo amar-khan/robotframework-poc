@@ -1,0 +1,28 @@
+version: '2'
+services:
+  prp-testsuite-0:
+    build: .
+    volumes:
+      - "/opt/mount1/PRP-TestCase:/home/robotframework/PRP-TestCase"
+      - "/opt/mount1/testsuite-0:/home/robotframework/testsuite-0"
+    environment:
+      - BROWSER=firefox
+      - robotenv
+      - testtarget
+      - DISPLAY=:99
+      - testsuite
+    container_name: prp-testsuite     
+
+  prp-testsuite-1:
+    build: .
+    volumes:
+      - "/opt/mount1/PRP-TestCase:/home/robotframework/PRP-TestCase"
+      - "/opt/mount1/testsuite-1:/home/robotframework/testsuite-1"
+    environment:
+      - BROWSER=firefox
+      - robotenv
+      - testtarget
+      - DISPLAY=:99
+      - testsuite
+    container_name: prp-testsuite1   
+   
